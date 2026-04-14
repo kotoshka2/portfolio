@@ -114,16 +114,29 @@
             transform: translateY(-4px);
             box-shadow: 0 0 32px rgba(0, 220, 229, 0.06);
         }
+
+        #mobile-menu {
+            transition: max-height 0.35s ease, opacity 0.35s ease;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body class="bg-surface text-on-surface">
     <!-- TopNavBar -->
     <nav
-        class="fixed top-0 w-full z-50 bg-neutral-900/40 backdrop-blur-xl transition-all duration-300 ease-in-out shadow-[0_0_20px_rgba(0,245,255,0.06)]">
-        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+        class="fixed top-0 w-full z-50 bg-neutral-900/80 backdrop-blur-xl transition-all duration-300 ease-in-out shadow-[0_0_20px_rgba(0,245,255,0.06)]">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
             <div class="text-2xl font-bold tracking-normal text-cyan-400 font-headline">KINETIC</div>
-            <div class="hidden md:flex items-center space-gap-8 gap-8">
+            <!-- Desktop nav -->
+            <div class="hidden md:flex items-center gap-8">
                 <a class="text-neutral-400 hover:text-neutral-100 transition-colors font-headline tracking-normal"
                     href="#work">Работы</a>
                 <a class="text-neutral-400 hover:text-neutral-100 transition-colors font-headline tracking-normal"
@@ -133,8 +146,18 @@
                 <button
                     class="bg-primary-container text-on-primary px-6 py-2 rounded font-semibold transition-all duration-300 hover:bg-neutral-800/50 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)]">Резюме</button>
             </div>
-            <div class="md:hidden">
-                <span class="material-symbols-outlined text-primary-container">menu</span>
+            <!-- Burger button -->
+            <button id="burger-btn" class="md:hidden flex items-center justify-center p-1" aria-label="Открыть меню">
+                <span id="burger-icon" class="material-symbols-outlined text-primary-container text-3xl">menu</span>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden bg-neutral-900/95 backdrop-blur-xl border-t border-outline-variant/20">
+            <div class="flex flex-col px-6 py-4 gap-5">
+                <a class="text-neutral-300 hover:text-cyan-400 transition-colors font-headline text-lg py-1" href="#work" onclick="closeMobileMenu()">Работы</a>
+                <a class="text-neutral-300 hover:text-cyan-400 transition-colors font-headline text-lg py-1" href="#tech" onclick="closeMobileMenu()">Технологии</a>
+                <a class="text-neutral-300 hover:text-cyan-400 transition-colors font-headline text-lg py-1" href="#contact" onclick="closeMobileMenu()">Контакты</a>
+                <a href="#" class="inline-block bg-primary-container text-on-primary px-6 py-3 rounded font-semibold text-center mt-1">Резюме</a>
             </div>
         </div>
     </nav>
@@ -152,7 +175,7 @@
                         <span class="text-xs font-bold uppercase tracking-widest text-primary">Открыт для новых
                             проектов</span>
                     </div>
-                    <h1 class="text-6xl md:text-8xl font-headline font-bold leading-[0.9] tracking-normal mb-8">
+                    <h1 class="text-4xl sm:text-5xl md:text-8xl font-headline font-bold leading-[1.05] md:leading-[0.9] tracking-normal mb-8">
                         МАДИЯР <br />
                         <span class="text-primary-container text-glow">FULL-STACK</span> <br />
                         РАЗРАБОТЧИК
@@ -395,6 +418,22 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const burgerIcon = document.getElementById('burger-icon');
+
+        burgerBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            burgerIcon.textContent = isOpen ? 'close' : 'menu';
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            burgerIcon.textContent = 'menu';
+        }
+    </script>
 </body>
 
 </html>
