@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Russo+One&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#736000",
+                        "on-tertiary": "#3a3000",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary": "#003739",
+                        "on-primary-fixed": "#002021",
+                        "surface-container": "#201f1f",
+                        "on-primary-container": "#006c71",
+                        "primary-fixed": "#63f7ff",
+                        "tertiary-container": "#ffdb3f",
+                        "on-secondary": "#520072",
+                        "tertiary": "#fff9f0",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-on-surface": "#313030",
+                        "secondary-container": "#b600f8",
+                        "on-primary-fixed-variant": "#004f53",
+                        "surface-tint": "#00dce5",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "tertiary-fixed": "#ffe16c",
+                        "on-surface-variant": "#b9caca",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#3a494a",
+                        "primary-fixed-dim": "#00dce5",
+                        "error-container": "#93000a",
+                        "primary-container": "#00f5ff",
+                        "tertiary-fixed-dim": "#e7c427",
+                        "surface-variant": "#353534",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#320047",
+                        "on-secondary-container": "#fff6fc",
+                        "secondary-fixed": "#f8d8ff",
+                        "on-secondary-fixed-variant": "#74009f",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#00696e",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed-dim": "#ebb2ff",
+                        "primary": "#e9feff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#849495",
+                        "on-surface": "#e5e2e1",
+                        "secondary": "#ebb2ff",
+                        "on-error": "#690005",
+                        "surface-dim": "#131313",
+                        "background": "#131313",
+                        "surface-bright": "#3a3939"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Russo One", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .ether-gradient {
+            background: linear-gradient(135deg, #00f5ff 0%, #b600f8 100%);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 32px rgba(0, 220, 229, 0.06);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-neutral-900/40 backdrop-blur-xl transition-all duration-300 ease-in-out shadow-[0_0_20px_rgba(0,245,255,0.06)]">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-bold tracking-normal text-cyan-400 font-headline">KINETIC</div>
+            <div class="hidden md:flex items-center space-gap-8 gap-8">
+                <a class="text-neutral-400 hover:text-neutral-100 transition-colors font-headline tracking-normal"
+                    href="#work">Работы</a>
+                <a class="text-neutral-400 hover:text-neutral-100 transition-colors font-headline tracking-normal"
+                    href="#tech">Технологии</a>
+                <a class="text-neutral-400 hover:text-neutral-100 transition-colors font-headline tracking-normal"
+                    href="#contact">Контакты</a>
+                <button
+                    class="bg-primary-container text-on-primary px-6 py-2 rounded font-semibold transition-all duration-300 hover:bg-neutral-800/50 hover:shadow-[0_0_15px_rgba(0,245,255,0.2)]">Резюме</button>
+            </div>
+            <div class="md:hidden">
+                <span class="material-symbols-outlined text-primary-container">menu</span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+            <!-- Background Pulse Decor -->
+            <div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary-container/5 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary-container/5 rounded-full blur-[120px]">
+            </div>
+            <div class="container mx-auto px-8 relative z-10 flex flex-col justify-center">
+                <div class="max-w-4xl">
+                    <div class="inline-flex items-center px-3 py-1 bg-surface-container-highest rounded-full mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-primary-container mr-2"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Открыт для новых
+                            проектов</span>
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-headline font-bold leading-[0.9] tracking-normal mb-8">
+                        МАДИЯР <br />
+                        <span class="text-primary-container text-glow">FULL-STACK</span> <br />
+                        РАЗРАБОТЧИК
+                    </h1>
+                    <p class="max-w-xl text-lg text-on-surface-variant leading-relaxed mb-10 font-body">
+                        Создаю высококачественные цифровые продукты, где техническая точность сочетается с эффектной
+                        подачей. Специализируюсь на React, Node.js и иммерсивном UI/UX.
+                    </p>
+                    <div class="flex flex-wrap gap-6">
+                        <a class="px-8 py-4 bg-primary-container text-on-primary font-bold rounded-lg transition-transform hover:scale-105"
+                            href="#work">Смотреть работы</a>
+                        <a class="px-8 py-4 border border-outline-variant text-on-surface font-bold rounded-lg hover:bg-surface-container-high transition-colors"
+                            href="#contact">Связаться со мной</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Work Showcase (Bento Grid) -->
+        <section class="py-32 bg-surface-container-lowest" id="work">
+            <div class="container mx-auto px-8">
+                <div class="mb-20">
+                    <span class="text-primary font-bold tracking-[0.2em] uppercase text-sm">Избранные работы</span>
+                    <h2 class="text-5xl font-headline font-bold mt-4 tracking-normal">СОЗДАННЫЕ ПРОЕКТЫ</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Large Feature Card -->
+                    <div class="md:col-span-8 group cursor-pointer">
+                        <div
+                            class="relative overflow-hidden rounded-xl bg-surface-container-high aspect-[16/9] card-hover-effect transition-all duration-500">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
+                                data-alt="Abstract 3D digital landscape with neon cyan and violet glowing lines on a dark background, cinematic lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_eVI6bQ5Jf6UwsvIkf5uUz2uv3NLZ-Vp5kA915dNfh8taCDDjAkOvRIshRaJBSAiukX0KMduRq6lfVXWsCL2iyjch3hcuezmk1WlWn2qeGguxo97f9lg1wL7X-wHRCWNBRo1vOvZM2ndYAU2AfxS_vPSxB6ku0pYRR80RTDE8Y2uZiAMZVEEBbjwA49nWsJZDTfF0N2I_TvCwPQLMiYMr5tqb2vNVMndYq-EQGmXm7Ixx6SxQ0jRS3FwVvvbo7wmM3cABVqAAOA78" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-90">
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-8 w-full">
+                                <div class="flex gap-2 mb-4">
+                                    <span
+                                        class="px-2 py-1 bg-primary-container/20 text-primary-container text-[10px] font-black tracking-widest rounded uppercase">Web3</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-container/20 text-primary-container text-[10px] font-black tracking-widest rounded uppercase">Интерфейс</span>
+                                </div>
+                                <h3 class="text-3xl font-headline font-bold mb-2">NEBULA DEX</h3>
+                                <p class="text-on-surface-variant max-w-md">Интерфейс децентрализованной биржи нового
+                                    поколения, созданный для скорости и ясности.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Small Side Card -->
+                    <div class="md:col-span-4 group cursor-pointer">
+                        <div
+                            class="relative overflow-hidden rounded-xl bg-surface-container-high h-full card-hover-effect transition-all duration-500">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-40"
+                                data-alt="Modern server room with glowing green and blue LED indicators in a dark environment, futuristic tech aesthetic"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTGCGOv2vyWA_WpSJTumjDV-_XAq1apP06cpsRit2O97a8oPTHfiG7PhcDgolOGj5PfdTCiEd1GmvH5PdULqhv0CZz24JO13yrbh03IvwdL7jBhsddOaw1mbGI23iP3r41VK8Y9F6WEQJQzDGBGhCyIAVXBn2GV0LGpiKIZ5re-KDZiongiMupy6Zm1t4VdnCqaBZOxV5DeSp_F29gBMq4Yen-h0cbeLTv5Nmqv655idgDnyRqRObSZiaaIxc_9k-X6XneopNo4oi1" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80">
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-8">
+                                <div class="flex gap-2 mb-4">
+                                    <span
+                                        class="px-2 py-1 bg-secondary-container/20 text-secondary-fixed text-[10px] font-black tracking-widest rounded uppercase">Кибер</span>
+                                </div>
+                                <h3 class="text-2xl font-headline font-bold mb-2">VOID SEC</h3>
+                                <p class="text-on-surface-variant text-sm">Дашборд киберразведки для мониторинга сети в
+                                    реальном времени.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="md:col-span-5 group cursor-pointer">
+                        <div
+                            class="relative overflow-hidden rounded-xl bg-surface-container-high aspect-square card-hover-effect transition-all duration-500">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50"
+                                data-alt="Minimalist architectural composition of shadows and sharp edges in a high-tech building, monochromatic black and white"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLu06DEshMOssJKzeQgTOOW0Wn8Nk_WVMYqjxW1tKkrAlJ2y1zwwy0HD27vixwwmI2XT5QmXey3elQjlYGLpHye2y_r_A6hmNI6j5XGdUMXI7ipCuTy1Vu96w8nQlT4jokY4AGV4GvkiWwAPmwUuOXGQdmlrc1GpcVsmBChRKEgfetskVFOy4Bsrm-uPC6uEhIm6YHoWvXJhcBJETZ85H6pEH2P2lKAyh2I5x5bOHPA250LHRC0Q4KiWsGJRAbWBnjZe0necDOaans" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80">
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-8">
+                                <h3 class="text-2xl font-headline font-bold mb-2">ETHOS BRAND</h3>
+                                <p class="text-on-surface-variant text-sm">Минималистичный дизайн e-commerce и
+                                    архитектура headless-магазина.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7 group cursor-pointer">
+                        <div
+                            class="relative overflow-hidden rounded-xl bg-surface-container-high h-full card-hover-effect transition-all duration-500">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50"
+                                data-alt="View of planet earth from space at night with glowing city lights and atmospheric neon blue haze"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT_FAK3kJAVAxD_sk-96H70I9Mn318nomTWQrFVQ2TGeurxpM5nOOQ0Zw3dgafUQtyVTIs7biFvXOKM0AdqPdQjFOMmczVHQQfoFy5J7hFwNjo5AS44tEEBYs_Cj3zgPbeiS37LtLz4qczGyVymJPV-0D7eNsonQpG_iz6ZkOWvaIUJ0uIVSSTh-cYIcGG0qaiIJDti9L-T3u3ZpzaZfz8c2Pr_1MVtX4q4I0XJ-y9ONroyDJC4LyAWcjH2ZhSGTLVaiK9A8gT2O1f" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80">
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-8">
+                                <div class="flex gap-2 mb-4">
+                                    <span
+                                        class="px-2 py-1 bg-primary-container/20 text-primary-container text-[10px] font-black tracking-widest rounded uppercase">ИИ</span>
+                                    <span
+                                        class="px-2 py-1 bg-primary-container/20 text-primary-container text-[10px] font-black tracking-widest rounded uppercase">Данные</span>
+                                </div>
+                                <h3 class="text-3xl font-headline font-bold mb-2">ORBIT ANALYTICS</h3>
+                                <p class="text-on-surface-variant max-w-sm">Инструмент визуализации для обработки
+                                    массивных геопространственных данных с WebGL.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tech Stack Section -->
+        <section class="py-32 bg-surface" id="tech">
+            <div class="container mx-auto px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-primary font-bold tracking-[0.2em] uppercase text-sm">Навыки</span>
+                        <h2 class="text-5xl font-headline font-bold mt-4 mb-8 tracking-normal">
+                            ИНЖЕНЕРНАЯ<br />ЭСТЕТИКА</h2>
+                        <p class="text-on-surface-variant text-lg leading-relaxed mb-12">
+                            Мой рабочий процесс — это слияние высокопроизводительной бэкенд-архитектуры и безупречного
+                            фронтенда. Я создаю системы, которые столь же стабильны, сколь и впечатляющи.
+                        </p>
+                        <div class="grid grid-cols-2 gap-y-8 gap-x-4">
+                            <div>
+                                <h4 class="text-primary font-bold mb-4 uppercase tracking-widest text-xs">Фронтенд</h4>
+                                <ul class="space-y-3 font-body text-on-surface-variant">
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-primary-container mr-3"></span>React
+                                        &amp; Next.js</li>
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-primary-container mr-3"></span>Tailwind
+                                        CSS</li>
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-primary-container mr-3"></span>Framer
+                                        Motion</li>
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-primary-container mr-3"></span>WebGL
+                                        &amp; Three.js</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-secondary font-bold mb-4 uppercase tracking-widest text-xs">Бэкенд</h4>
+                                <ul class="space-y-3 font-body text-on-surface-variant">
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-secondary-container mr-3"></span>Node.js
+                                        &amp; Express</li>
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-secondary-container mr-3"></span>PostgreSQL
+                                    </li>
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-secondary-container mr-3"></span>GraphQL
+                                    </li>
+                                    <li class="flex items-center"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-secondary-container mr-3"></span>AWS /
+                                        Vercel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div
+                            class="bg-surface-container-high aspect-square flex flex-col items-center justify-center rounded-xl card-hover-effect transition-all">
+                            <span class="material-symbols-outlined text-primary-container text-4xl mb-2">code</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Логика</span>
+                        </div>
+                        <div
+                            class="bg-surface-container-high aspect-square flex flex-col items-center justify-center rounded-xl card-hover-effect transition-all transform translate-y-8">
+                            <span class="material-symbols-outlined text-secondary-container text-4xl mb-2">brush</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Стиль</span>
+                        </div>
+                        <div
+                            class="bg-surface-container-high aspect-square flex flex-col items-center justify-center rounded-xl card-hover-effect transition-all">
+                            <span class="material-symbols-outlined text-primary-container text-4xl mb-2">bolt</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Скорость</span>
+                        </div>
+                        <div
+                            class="bg-surface-container-high aspect-square flex flex-col items-center justify-center rounded-xl card-hover-effect transition-all">
+                            <span
+                                class="material-symbols-outlined text-secondary-container text-4xl mb-2">data_object</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Данные</span>
+                        </div>
+                        <div
+                            class="bg-surface-container-high aspect-square flex flex-col items-center justify-center rounded-xl card-hover-effect transition-all transform translate-y-8">
+                            <span class="material-symbols-outlined text-primary-container text-4xl mb-2">terminal</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Консоль</span>
+                        </div>
+                        <div
+                            class="bg-surface-container-high aspect-square flex flex-col items-center justify-center rounded-xl card-hover-effect transition-all">
+                            <span
+                                class="material-symbols-outlined text-secondary-container text-4xl mb-2">auto_awesome</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Эффект</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA / Contact -->
+        <section class="py-32 bg-surface-container-lowest" id="contact">
+            <div class="container mx-auto px-8 max-w-4xl text-center">
+                <div class="glass-panel p-16 rounded-3xl relative overflow-hidden border border-outline-variant/10">
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-primary-container to-transparent">
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-headline font-bold mb-8 tracking-normal">
+                        ГОТОВЫ <br />
+                        <span class="text-primary-container text-glow">ШАГНУТЬ В ПУСТОТУ?</span>
+                    </h2>
+                    <p class="text-on-surface-variant text-lg mb-12 max-w-xl mx-auto">
+                        В настоящее время открыт для сотрудничества в масштабных проектах. Если у вас есть идея,
+                        требующая архитектурной точности, давайте обсудим.
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center">
+                        <a class="inline-flex items-center justify-center px-10 py-5 bg-primary-container text-on-primary font-bold rounded-lg transition-all hover:shadow-[0_0_20px_rgba(0,245,255,0.4)]"
+                            href="mailto:hello@alexchen.dev">
+                            <span class="material-symbols-outlined mr-2">mail</span>
+                            НАЧАТЬ ОБЩЕНИЕ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-neutral-950 w-full py-16 px-8 mt-32 tonal-shift bg-neutral-900">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+            <div class="text-lg font-black text-neutral-100 font-headline">KINETIC ETHER</div>
+            <div class="flex flex-wrap justify-center gap-8 text-sm uppercase tracking-widest font-['Inter']">
+                <a class="text-neutral-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100"
+                    href="#">GitHub</a>
+                <a class="text-neutral-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100"
+                    href="#">LinkedIn</a>
+                <a class="text-neutral-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100"
+                    href="#">Терминал</a>
+                <a class="text-neutral-500 hover:text-cyan-400 transition-colors opacity-80 hover:opacity-100"
+                    href="#">Почта</a>
+            </div>
+            <div class="text-neutral-500 font-['Inter'] text-sm uppercase tracking-widest opacity-80">
+                © 2024 Kinetic Ether. Создано в пустоте.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
